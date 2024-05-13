@@ -165,16 +165,19 @@ public class DonanteDAO implements IPaciente {
     public int updatePersona(int pk, DonanteVO nuevosDatos) throws SQLException {
 
         int numFilas = 0;
-        String sql = "update donantes set id_paciente = ?, nombre = ?, fechaNacimiento = ?, grupoSanguineo = ?, rh = ?, numeroDonaciones = ? ,where pk=?";
+        //String sql = "update donantes set id_paciente = ?, nombre = ?, fechaNacimiento = ?, grupoSanguineo = ?, rh = ?, numeroDonaciones = ? where id_paciente = ?";
+          String sql = "update donantes set id_paciente = ?, nombre = ?, fechaNacimiento = ?, grupoSanguineo = ?, rh = ?, numeroDonaciones = ? where id_paciente = ?";
 
         if (findByPk(pk) == null) {
             // La persona a actualizar no existe
+            System.out.println("NO EXISTE ESE DONANTE");
             return numFilas;
         } else {
             // Instanciamos el objeto PreparedStatement para inserción
             // de datos. Sentencia parametrizada
+            System.out.println("SI EXISTE ESE DONANTE");
             try (PreparedStatement prest = con.prepareStatement(sql)) {
-
+                
                 // Establecemos los parámetros de la sentencia
                 prest.setInt(1, nuevosDatos.getId_paciente());
                 prest.setString(2, nuevosDatos.getNombre());
@@ -182,10 +185,43 @@ public class DonanteDAO implements IPaciente {
                 prest.setString(4, nuevosDatos.getGrupoSanguineo());
                 prest.setString(5, nuevosDatos.getRh());
                 prest.setInt(6, nuevosDatos.getNumeroDonaciones());
+                prest.setInt(7, pk);
 
                 numFilas = prest.executeUpdate();
             }
             return numFilas;
         }
     }
+    
+    
+    
+    /*
+    @Override
+public int updatePersona(int pk, DonanteVO nuevosDatos) throws SQLException {
+    int numFilas = 0;
+    String sql = "update donantes set id_paciente = ?, nombre = ?, fechaNacimiento = ?, grupoSanguineo = ?, rh = ?, numeroDonaciones = ? where id_paciente = ?";
+
+    if (findByPk(pk) == null) {
+        // La persona a actualizar no existe
+        System.out.println("NO EXISTE ESE DONANTE");
+        return numFilas;
+    } else {
+        // Instanciamos el objeto PreparedStatement para la actualización de datos.
+        System.out.println("SI EXISTE ESE DONANTE");
+        try (PreparedStatement prest = con.prepareStatement(sql)) {
+            // Establecemos los parámetros de la sentencia
+            prest.setInt(1, nuevosDatos.getId_paciente());
+            prest.setString(2, nuevosDatos.getNombre());
+            prest.setDate(3, Date.valueOf(nuevosDatos.getFechaNacimiento()));
+            prest.setString(4, nuevosDatos.getGrupoSanguineo());
+            prest.setString(5, nuevosDatos.getRh());
+            prest.setInt(6, nuevosDatos.getNumeroDonaciones());
+            prest.setInt(7, pk); // Añadimos el valor del id_paciente original para la cláusula WHERE
+
+            numFilas = prest.executeUpdate();
+        }
+        return numFilas;
+    }
+}
+*/
 }

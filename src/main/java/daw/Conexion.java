@@ -20,9 +20,11 @@ public class Conexion {
          Connection con = Conexion.getInstance();
     }
 
-    private static final String SERVIDOR = "jdbc:mysql://127.0.0.1/";
+    //private static final String SERVIDOR = "jdbc:mysql://127.0.0.1/";
+     private static final String SERVIDOR = "jdbc:mysql://localhost/";
     private static final String NOMBRE_BASE_DATOS = "p81Tomas";
-    private static final String USER = "tomas";
+    //private static final String USER = "tomas";
+    private static final String USER = "root";
     private static final String PASS = "1234";
 
     private static Connection instancia = null;
@@ -41,7 +43,7 @@ public class Conexion {
                 // Se crea el objeto Connection	
                 instancia = DriverManager.getConnection(SERVIDOR + NOMBRE_BASE_DATOS, USER, PASS);
 
-                System.out.println("Conexión realizada con éxito.");
+                System.out.println("Conexión a: "+NOMBRE_BASE_DATOS+" realizada con éxito.");
 
             } catch (SQLException e) {
 
