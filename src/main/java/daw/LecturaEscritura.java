@@ -30,17 +30,6 @@ public class LecturaEscritura {
 
     public final static String NOMBRE_FICHERO = "donantes.json";
 
-//    // Método que lee el fichero json y lo guarda en una lista
-//    public static List<DonanteVO> lecturaFicheroJSON() throws IOException {
-//        List<DonanteVO> lista = new ArrayList<>();
-//        ObjectMapper mapeador = new ObjectMapper();
-//        mapeador.registerModule(new JavaTimeModule());
-//
-//        lista = mapeador.readValue(new File(NOMBRE_FICHERO),
-//                mapeador.getTypeFactory()
-//                        .constructCollectionType(List.class, DonanteVO.class));
-//         return lista;
-//    }
     // Método que lee el fichero json y lo guarda en una lista
     public static List<DonanteVO> lecturaFicheroJSON() throws IOException {
         List<DonanteVO> lista = new ArrayList<>();
