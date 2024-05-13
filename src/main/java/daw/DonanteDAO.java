@@ -58,7 +58,7 @@ public class DonanteDAO implements IPaciente {
         ResultSet res = null;
         DonanteVO persona = new DonanteVO();
 
-        String sql = "select * from donantes where pk=?";
+        String sql = "select * from donantes where id_paciente=?";
 
         try (PreparedStatement prest = con.prepareStatement(sql)) {
             // Preparamos la sentencia parametrizada
@@ -148,7 +148,7 @@ public class DonanteDAO implements IPaciente {
     public int deletePersona(DonanteVO persona) throws SQLException {
         int numFilas = 0;
 
-        String sql = "delete from donantes where pk = ?";
+        String sql = "delete from donantes where id_paciente = ?";
 
         // Sentencia parametrizada
         try (PreparedStatement prest = con.prepareStatement(sql)) {
