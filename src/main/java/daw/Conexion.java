@@ -16,9 +16,9 @@ import java.sql.SQLException;
 public class Conexion {
     
     
-    public static void main(String[] args) {
-         Connection con = Conexion.getInstance();
-    }
+//    public static void main(String[] args) {
+//         Connection con = Conexion.getInstance();
+//    }
 
     //private static final String SERVIDOR = "jdbc:mysql://127.0.0.1/";
      private static final String SERVIDOR = "jdbc:mysql://localhost/";

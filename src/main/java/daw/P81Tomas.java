@@ -49,17 +49,17 @@ public class P81Tomas {
             System.out.println("Nº Personas modificadas " + 
                     daoPersona.updatePersona(2, new DonanteVO(22, "TomasAriel", LocalDate.of(2028, 6, 28), "A", "+", 0)
                     ));
-//            System.out.println("\n-----------------------------------------\n");
-//            nuevaLista = daoPersona.getAll();
-//            System.out.println("-------- Lista con datos recogidos desde la B.D despues de modificar una persona -------------");
-//            nuevaLista.forEach(System.out::println);
+            System.out.println("\n-----------------------------------------\n");
+            nuevaLista = daoPersona.getAll();
+            System.out.println("-------- Lista con datos recogidos desde la B.D despues de modificar una persona -------------");
+            nuevaLista.forEach(System.out::println);
             
 
         } catch (SQLException sqle) {
             System.out.println("\nNo se ha podido realizar la operación:\n" + sqle.getMessage());
         }
-//////        System.out.println("-------- Lista original --------------------");
-//////        listaDonantes.forEach(System.out::println);
+        System.out.println("-------- Lista original --------------------");
+        listaDonantes.forEach(System.out::println);
 
     }
 }

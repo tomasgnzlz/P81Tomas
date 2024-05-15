@@ -21,12 +21,12 @@ import java.util.List;
  */
 public class LecturaEscritura {
     
-
-    public static void main(String[] args) throws IOException {
-        List<DonanteVO> lista = new ArrayList<>();
-        lista = lecturaFicheroJSON();
-        lista.forEach(System.out::println);
-    }
+//
+//    public static void main(String[] args) throws IOException {
+//        List<DonanteVO> lista = new ArrayList<>();
+//        lista = lecturaFicheroJSON();
+//        lista.forEach(System.out::println);
+//    }
 
     public final static String NOMBRE_FICHERO = "donantes.json";
 
