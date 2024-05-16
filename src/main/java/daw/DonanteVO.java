@@ -1,4 +1,4 @@
-/*
+    /*
  * Clase para mapear los datos de la tabla Persona
  */
 package daw;

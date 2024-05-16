@@ -1,7 +1,6 @@
 /*
  * Esta clase aplica el patrón SINGLETON
  */
-
 package daw;
 
 import java.sql.Connection;
@@ -12,23 +11,20 @@ import java.sql.SQLException;
  *
  * @author J. Carlos F. Vico <jcarlosvico@maralboran.es>
  */
-
 public class Conexion {
-    
-    
-//    public static void main(String[] args) {
-//         Connection con = Conexion.getInstance();
-//    }
 
-    //private static final String SERVIDOR = "jdbc:mysql://127.0.0.1/";
-     private static final String SERVIDOR = "jdbc:mysql://localhost/";
+    public static void main(String[] args) {
+         Connection con = Conexion.getInstance();
+    }
+    private static final String SERVIDOR = "jdbc:mysql://127.0.0.1/";
+    //private static final String SERVIDOR = "jdbc:mysql://localhost/";
     private static final String NOMBRE_BASE_DATOS = "p81Tomas";
-    //private static final String USER = "tomas";
-    private static final String USER = "root";
+    private static final String USER = "tomas";
+    //private static final String USER = "root";
     private static final String PASS = "1234";
 
     private static Connection instancia = null;
-    
+
     // Constructor privado no accesible desde otras clases
     private Conexion() {
 
@@ -43,7 +39,7 @@ public class Conexion {
                 // Se crea el objeto Connection	
                 instancia = DriverManager.getConnection(SERVIDOR + NOMBRE_BASE_DATOS, USER, PASS);
 
-                System.out.println("Conexión a: "+NOMBRE_BASE_DATOS+" realizada con éxito.");
+                System.out.println("Conexión a: " + NOMBRE_BASE_DATOS + " realizada con éxito.");
 
             } catch (SQLException e) {
 
